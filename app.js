@@ -20,3 +20,21 @@ function isPrime(number) {
   }
   return flag;
 }
+function displayResult() {
+  var number = inputNumber.value;
+  if (number === "" || number < 0)
+    output.textContent = "Please enter valid input";
+  else {
+    var flag = isPrime(Number(number));
+    if (flag === 1) {
+      output.textContent = number + " is neither prime nor composite 🥴";
+    }
+    if (flag === 2) {
+      output.textContent = number + " is a prime number 😎";
+    }
+    if (flag === 3) {
+      output.textContent = number + " is not a prime number 🙁";
+    }
+  }
+}
+btnCheck.addEventListener("click", displayResult);
